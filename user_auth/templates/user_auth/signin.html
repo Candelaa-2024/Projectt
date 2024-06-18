@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href={% static "user_auth/STYLES/signin.css" %}>
+    <link rel="stylesheet" href={% static "user_auth/STYLES/toast.css" %}>
+
+    <script defer src={% static "user_auth/SCRIPTS/toast.js" %}></script>
+    <script defer src={% static "user_auth/SCRIPTS/signin.js" %}></script>
+</head>
+<body>
+        <form class="container">
+              <!-- Toast container -->
+            <div class="toast-container" id="toast-container">
+                <div class="toast" id="toast">
+                <span id="toast-message"></span>
+                <button class="close-button" onclick="hideToast()">×</button>
+                </div>
+            </div>
+            <h1 class="title">Sign in</h1>
+            <input id="email" class="email-field input-style" type="email" placeholder="Please enter your email">
+            <input id="password" class="password-field input-style" type="password" placeholder="Please enter your password">
+            <div id="remember-me" class="remember-me">
+                <label for="remember-me">Remember me</label>
+                <input id="remember-me" type="checkbox"> 
+            </div>
+            <div class="button-container">
+                <button type="submit" class="button-style submit-style">Sign in</button>
+                <a href={% url "user_auth:signup" %} class="button-style signup">Sign up</a>
+                
+            </div>
+        </form>
+    </div>
+</body>
+</html>

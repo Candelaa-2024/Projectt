@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href={% static "user_auth/STYLES/signup.css" %} />
+    <link rel="stylesheet" href={% static "user_auth/STYLES/toast.css" %}/>
+    <link rel="stylesheet" href={% static "user_auth/STYLES/password-checklist.css" %}/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <script defer src={% static "user_auth/SCRIPTS/password.js" %}></script>
+    <script defer src={% static "user_auth/SCRIPTS/toast.js" %}></script>
+    <script defer src={% static "user_auth/SCRIPTS/signup.js" %}></script>
+
+  </head>
+  <body>
+    <form class="container" id="form" autocomplete="off">
+      <!-- Toast container -->
+      <div class="toast-container" id="toast-container">
+        <div class="toast" id="toast">
+          <span id="toast-message"></span>
+          <button class="close-button" onclick="hideToast()">×</button>
+        </div>
+      </div>
+      
+      <h1 class="title">Create an account</h1>
+      <section class="form-wrapper">
+        <div class="input-wrapper">
+          <input
+            autofocus
+            id="name"
+            name="name"
+            class="input-style"
+            type="text"
+            autocomplete="off"
+            placeholder="Please type your name"
+          />
+        </div>
+        <div class="input-wrapper">
+          <input
+            id="email"
+            class="input-style"
+            name="email"
+            type="email"
+            autocomplete="off"
+            placeholder="Please type your email"
+          />
+        </div>
+        <div>
+          <div class="input-wrapper">
+            <input
+              id="password"
+              name="password"
+              class="input-style"
+              type="password"
+              autocomplete="off"
+              placeholder="Please type your password"
+            />
+            <i class="fa-solid fa-eye show-password"></i>
+          </div>
+          <div class="password-checklist">
+            <div class="strength-wrapper">
+              <div class="strength-meter"></div>
+            </div>
+            <p class="checklist-title">Password should be:</p>
+            <ul class="checklist">
+              <li class="list-item">At least 8 character long</li>
+              <li class="list-item">At least 1 numeric</li>
+              <li class="list-item">At least 1 lowercase character</li>
+              <li class="list-item">At least 1 uppercase character</li>
+              <li class="list-item">At least 1 special character</li>
+            </ul>
+          </div>
+        </div>
+        <!-- <div class="password-strength-indicator"></div> -->
+
+        <div class="input-wrapper">
+          <input
+            id="password-confirm"
+            name="password-confirm"
+            class="input-style"
+            type="password"
+            autocomplete="off"
+            placeholder="Please re-type your password"
+          />
+          <i class="fa-solid fa-eye show-password"></i>
+        </div>
+
+        <div class="toc">
+          <input id="toc" type="checkbox" />
+          <label for="checkbox"
+            >I agree to the <a href="#">Terms & Conditions</a></label
+          >
+        </div>
+        <div class="button-container">
+          <button id="submit" type="submit" class="button-style submit-style">
+            Sign Up
+          </button>
+        </div>
+      </section>
+      <p class="signin-link">
+        Already have an account? <a href={% url "user_auth:login" %}>Sign in here</a>
+      </p>
+    </form>
+  </body>
+</html>

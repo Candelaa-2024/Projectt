@@ -1,0 +1,90 @@
+body {
+    background-color: purple;
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    width: 80%;
+    max-width: 1200px; 
+    padding-top: 5vh; 
+}
+
+
+.container {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    width: 40%; /* Adjust the width as needed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+.title {
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.input-style {
+    background: transparent;
+    border: 1px solid purple;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    color: black;
+    width: 100%;
+}
+
+.remember-me {
+    color: purple;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.button-style {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.5rem;
+    background: purple;
+}
+
+.signup, .submit-style, .help-style {
+    background: purple; 
+}
+
+.help-style {
+    background: purple; 
+}
+
+.button-style:hover {
+    opacity: 0.8;
+}
+
+.button-style:focus {
+    outline: none;
+}
+
+/* Additional styles if needed */

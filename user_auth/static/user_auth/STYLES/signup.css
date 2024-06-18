@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: purple;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 40%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+.form-wrapper {
+  width: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.input-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+  height: fit-content;
+}
+
+.show-password {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: purple;
+  cursor: pointer;
+  /* transform: translateY(-50%); */
+}
+.input-style {
+  background: white;
+  border: 1px solid purple;
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: black;
+  width: 100%;
+
+  outline: none;
+}
+.input-style::placeholder {
+  color: purple;
+}
+
+.input-style:focus {
+  box-shadow: 0 0 2px 1px purple;
+}
+.error-shadow {
+  border-color: red;
+  box-shadow: 0 0 2px 1px red;
+}
+.success-shadow {
+  border-color: #4fe222;
+  box-shadow: 0 0 2px 1px #4fe222;
+}
+.error {
+  color: red;
+  margin: 0;
+  padding: 0;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.button-style {
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  display: inline-block;
+  margin: 0.5rem;
+  background: purple;
+  cursor: pointer;
+}
+.button-style:disabled {
+  cursor: not-allowed;
+}
+
+.password-strength-indicator {
+  display: none;
+  color: red;
+}
+.toc {
+  margin-top: 1rem;
+}
+
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+/* input:-webkit-autofill:focus, */
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+

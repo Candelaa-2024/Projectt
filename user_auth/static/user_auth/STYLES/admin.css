@@ -1,0 +1,225 @@
+body {
+  width: 90%;
+  margin: 0 auto;
+  --primary-color: purple;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  color: purple;
+  font-size: 20px;
+}
+.logo {
+  cursor: pointer;
+  font-weight: 700;
+  text-shadow: 1px 1px purple;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link span {
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+.profile {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  border-radius: 30px;
+  border: 1px solid purple;
+  box-shadow: 0px 0px 2px 1px purple;
+}
+
+.table {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.table .tr,
+.table .thead {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr 2fr 0.5fr;
+  border-bottom: 1px solid var(--primary-color);
+  padding: 10px;
+}
+.table .thead {
+  background-color: purple;
+  color: white;
+}
+.table .thead .th {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.table .tr .td {
+  font-size: 20px;
+}
+
+.table .tr:hover {
+  background-color: rgba(128, 0, 128, 0.683);
+  color: white;
+}
+.table .tr .dialog-container .action-btn {
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+.wrapper {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  gap: 10px;
+}
+.filter input[type="search"] {
+  outline: none;
+  border: 1px solid purple;
+  font-size: 1.1rem;
+  padding: 10px 16px;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.wrapper .limit span {
+  font-size: 20px;
+  font-weight: 600;
+  color: purple;
+}
+
+.wrapper .limit select {
+  width: 80px;
+  padding: 8px;
+  border: 1px solid purple;
+  color: purple;
+  font-size: 18px;
+  outline: none;
+  border-radius: 5px;
+}
+
+.status label {
+  color: purple;
+  font-size: 20px;
+  font-weight: 600;
+}
+.sort label {
+  color: purple;
+  font-size: 20px;
+  margin-right: 5px;
+  font-weight: 600;
+}
+#sort {
+  width: 150px;
+  padding: 5px;
+  border: 1px solid var(--primary-color);
+  outline: none;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+.actions {
+  width: fit-content;
+  position: absolute;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 4px 1px rgba(128, 0, 128, 0.683);
+  backdrop-filter: blur(10px);
+  display: none;
+  gap: 5px;
+  text-transform: capitalize;
+}
+
+.actions span {
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+.actions span:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+.actions span:active {
+  font-size: 15px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-top: 25px;
+}
+footer span {
+  font-size: 20px;
+  font-weight: 600;
+  color: purple;
+}
+footer button {
+  padding: 8px 14px;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid purple;
+  color: purple;
+  background-color: transparent;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+footer button.active,
+footer button:hover {
+  background-color: purple;
+  color: white;
+}
+
+.dialog {
+  display: none;
+  position: absolute;
+  backdrop-filter: blur(2px 2px purple);
+  border: 1px solid #ccc;
+  padding: 10px 5px;
+  right: 0;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+}
+
+.show-dialog {
+  display: block;
+  z-index: 10;
+}
+
+.dialog button {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 5px 8px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.dialog button:first-child {
+  background-color: rgba(255, 255, 0, 0.88);
+  color: purple;
+}
+
+.dialog button:nth-child(2) {
+  background-color: red;
+  color: white;
+}
+
+.dialog-container {
+  position: relative;
+  display: inline-block;
+}

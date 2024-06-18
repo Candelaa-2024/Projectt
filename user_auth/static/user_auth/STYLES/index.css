@@ -1,0 +1,266 @@
+body {
+    background-color: purple;
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%; /* Adjust the width as needed */
+    height: fit-content;
+    background-color: purple;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    width: 100%; /* Adjust the width as needed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+.title {
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.input-style {
+    background: transparent;
+    border: 1px solid purple;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    color: black;
+    width: 100%;
+    outline: none;
+}
+
+.button-style {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.5rem;
+    background: purple;
+    cursor: pointer;
+}
+
+.show-password {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: purple;
+    cursor: pointer;
+    /* transform: translateY(-50%); */
+  }
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+    height: fit-content;
+  }
+
+  .password-checklist {
+    width: 100%;
+    /* display: none; */
+    opacity: 0;
+    margin-top: 5px;
+    border-radius: 10px;
+    padding: 10px 30px;
+    background-color: aliceblue;
+    filter: drop-shadow(0 0 5px rgb(246, 1, 246));
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: 0.5s ease;
+  }
+  .show-checklist {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .checklist-title {
+    font-size: 15px;
+    color: purple;
+  }
+  
+  .checklist {
+    list-style: none;
+  }
+  
+  .list-item {
+    color: purple;
+    margin-bottom: 6px;
+    padding-left: 30px;
+  }
+  
+  .list-item::before {
+    content: "\f00d";
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: -30px;
+    width: 20px;
+    font-size: 12px;
+  }
+  
+  .list-item.checked {
+    color: #4fe222;
+    text-decoration: line-through;
+  }
+  .list-item.checked::before {
+    content: "\f00c";
+  }
+  .strength-wrapper {
+    width: 100%;
+    height: 5px;
+    position: relative;
+    margin: 8px 0;
+  }
+  
+  .strength-meter {
+    width: 100%;
+    height: 5px;
+    margin: 25px 0;
+    border-radius: 4px;
+    background-color: #222;
+    overflow: hidden;
+  }
+  .strength-meter::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    transition: 0.5s;
+    border-radius: 4px;
+    background-color: #f00;
+    overflow: hidden;
+  }
+  .strength-wrapper.weak .strength-meter::before {
+    width: 20%;
+    border-radius: 4px;
+    overflow: hidden;
+    filter: drop-shadow(0 0 5px #f00);
+  }
+  .strength-wrapper.medium .strength-meter::before {
+    width: 50%;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #ffa500;
+    filter: drop-shadow(0 0 5px #ffa500);
+  }
+  .strength-wrapper.strong .strength-meter::before {
+    width: 80%;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #0f0;
+    filter: drop-shadow(0 0 5px #0f0);
+  }
+  .strength-wrapper.very-strong .strength-meter::before {
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #02ab02;
+    filter: drop-shadow(0 0 5px #02ab02);
+  }
+  
+  .strength-meter::after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    top: -40px;
+    transition: 0.5 ease;
+  }
+  
+  .strength-wrapper.weak .strength-meter::after {
+    content: "Your password is weak";
+    top: -30px;
+    opacity: 1;
+    color: #f00;
+  }
+  .strength-wrapper.medium .strength-meter::after {
+    content: "Your password is medium";
+    top: -30px;
+    opacity: 1;
+    color: #ffa500;
+  }
+  .strength-wrapper.strong .strength-meter::after {
+    content: "Your password is strong";
+    top: -30px;
+    opacity: 1;
+    color: rgb(2, 226, 2);
+  }
+  .strength-wrapper.very-strong .strength-meter::after {
+    content: "Your password is very strong";
+    top: -30px;
+    opacity: 1;
+    color: #02ab02;
+  }
+  
+/* copy to clipboard */
+
+.copy-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    opacity: 0;
+    transition: 0.5s ease;
+  }
+  
+  .show-clipboard{
+    opacity: 1;
+  }
+  .copy-input{
+    padding: 10px;
+    border: 1px solid purple;
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: none;
+    /* width: 200px; */
+    flex: 1;
+  }
+  .copy-input:focus{
+    border: 2px solid purple;
+  }
+  
+  .copy-button {
+    padding: 10px 20px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .copy-button:hover {
+    background-color: rgb(103, 1, 103);
+  }
+
+
+  .btn-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width:100% ;
+    justify-content: center;
+  }
+
+  
