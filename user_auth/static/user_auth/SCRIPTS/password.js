@@ -1,3 +1,5 @@
+import { passwordCheckList, passwordConfirm, passwordInput, container } from "./signup.js"
+
 // validate password
 const showPasswordBtn = document.querySelectorAll(".show-password")
 
@@ -78,3 +80,5 @@ function validatePassword() {
 
   console.log(isPassValid)
 }
+
+export {validatePassword}

@@ -1,3 +1,5 @@
+import { validatePassword } from "./password.js"
+
 const nameInp = document.getElementById("name")
 const emailInput = document.getElementById("email")
 const passwordInput = document.getElementById("password")
@@ -139,7 +141,7 @@ validateInput(inputs[3])
 // validate form
 function validateForm() {
   const passwordIsValid =
-   /^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()\-_=+{};:,<.>]?)(?=.*[0-9]?).{8,}$/.test(
+    /^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()\-_=+{};:,<.>]?)(?=.*[0-9]?).{8,}$/.test(
       passwordInput.value
     )
 
@@ -161,8 +163,10 @@ function validateForm() {
     emailIsValid
   ) {
     document.getElementById("submit").disabled = false
+    return true
   } else {
     document.getElementById("submit").disabled = true
+    return false
   }
 }
 
@@ -176,26 +180,31 @@ window.addEventListener(
 )
 
 // submit inputs
-const form = document.querySelector("form")
+const validForm = validateForm()
 
-form.addEventListener("submit", async e => {
-  e.preventDefault()
-  const data = {
-    name: nameInp.value,
-    email: emailInput.value,
-    password: passwordInput.value,
-  }
-  const response = await fetch("http://localhost:5000/api/users", {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-      "Content-type": "application/json",
-      Accept: "application/json",
-    },
-  })
-  window.location.href='signin.html'
-  const result = await response.json()
-  console.log(result)
-})
+if (validForm){
+  const form = document.querySelector("#form")
+  form.submit()  
+}
 
+export {passwordCheckList, passwordInput, passwordConfirm, container}
 
+// form.addEventListener("submit", async e => {
+//   e.preventDefault()
+//   const data = {
+//     name: nameInp.value,
+//     email: emailInput.value,
+//     password: passwordInput.value,
+//   }
+//   const response = await fetch("http://localhost:5000/api/users", {
+//     method: "POST",
+//     body: JSON.stringify(data),
+//     headers: {
+//       "Content-type": "application/json",
+//       Accept: "application/json",
+//     },
+//   })
+//   window.location.href='signin.html'
+//   const result = await response.json()
+//   console.log(result)
+// })

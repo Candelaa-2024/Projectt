@@ -24,7 +24,7 @@ def addTodo(request):
         new_todo = Todo(text=request.POST['text'])
         new_todo.save()
 
-    return redirect('index')
+    return redirect('todo:index')
 
 @login_required
 def completeTodo(request, todo_id):
@@ -32,16 +32,16 @@ def completeTodo(request, todo_id):
     todo.complete = True
     todo.save()
 
-    return redirect('index')
+    return redirect('todo:index')
 
 @login_required
 def deleteCompleted(request):
     Todo.objects.filter(complete__exact=True).delete()
 
-    return redirect('index')
+    return redirect('todo:index')
 
 @login_required
 def deleteAll(request):
     Todo.objects.all().delete()
 
-    return redirect('index')
+    return redirect('todo:index')
