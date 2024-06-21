@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: purple;
+  background-color: purple !important;
 
   height: 100vh;
   display: flex;

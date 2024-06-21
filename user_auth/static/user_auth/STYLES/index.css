@@ -1,5 +1,5 @@
 body {
-    background-color: purple;
+    background-color: purple !important;
     background-size: cover;
     margin: 0;
     height: 100vh;
