@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from validate_email import validate_email
 from .models import User
+from .decorators import before_and_after_request
 
 # Create your views here.
+@before_and_after_request
 def loginview(request):
     if request.method == "GET":
         return render(request, "user_auth/signin.html", {})

@@ -21,14 +21,17 @@ def addTodo(request):
     form = TodoForm(request.POST)
 
     if form.is_valid():
-        new_todo = Todo(text=request.POST['text'])
+        new_todo = Todo(text=request.POST['text'], user=request.user)
         new_todo.save()
 
     return redirect('todo:index')
 
 @login_required
 def completeTodo(request, todo_id):
-    todo = Todo.objects.get(pk=todo_id)
+    try:
+        todo = Todo.objects.get(pk=todo_id, user=request.user)
+    except:
+        return redirect('todo:index')        
     todo.complete = True
     todo.save()
 
@@ -36,12 +39,12 @@ def completeTodo(request, todo_id):
 
 @login_required
 def deleteCompleted(request):
-    Todo.objects.filter(complete__exact=True).delete()
+    Todo.objects.filter(complete__exact=True, user=request.user).delete()
 
     return redirect('todo:index')
 
 @login_required
 def deleteAll(request):
-    Todo.objects.all().delete()
+    Todo.objects.filter(user=request.user).all().delete()
 
     return redirect('todo:index')
