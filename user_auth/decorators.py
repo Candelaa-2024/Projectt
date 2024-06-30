@@ -94,9 +94,10 @@ def before_and_after_request(route_func):
         data_dict["response_status_code"] = result.status_code
         data_dict["content_type"] = request.META.get('CONTENT_TYPE')
 
-        if result.get("message", None):
+        if result.status_code == 302:
             data_dict["logged_in_after_attempt"] = True
         else:
+            print()
             data_dict["logged_in_after_attempt"] = False
 
         # Write the extracted data to the csv log file
