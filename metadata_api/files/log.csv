@@ -107,12 +107,3 @@ ip_address,request_time,request_method,response_status_code,user_agent_browser,u
 127.0.0.1,2024-06-30 09:37:45.118391,POST,200,Edge,Windows,,,application/x-www-form-urlencoded,False
 127.0.0.1,2024-06-30 09:37:53.089914,POST,200,Edge,Windows,,,application/x-www-form-urlencoded,False
 127.0.0.1,2024-06-30 09:38:04.596654,POST,302,Edge,Windows,,,application/x-www-form-urlencoded,True
-127.0.0.1,2024-06-30 15:50:52.120326,GET,200,Edge,Windows,,,text/plain,False
-127.0.0.1,2024-06-30 15:51:13.932550,GET,200,Edge,Windows,,,text/plain,False
-127.0.0.1,2024-06-30 17:28:13.601690,GET,200,Edge,Windows,,,text/plain,False
-127.0.0.1,2024-06-30 18:26:51.811427,GET,200,Edge,Windows,,,text/plain,False
-127.0.0.1,2024-06-30 18:30:13.899905,GET,200,Edge,Windows,,,text/plain,False
-127.0.0.1,2024-06-30 18:30:58.632129,POST,302,Edge,Windows,,,application/x-www-form-urlencoded,True
-127.0.0.1,2024-06-30 18:41:20.143176,GET,200,Edge,Windows,,,text/plain,False
-127.0.0.1,2024-06-30 19:15:53.297075,POST,302,Edge,Windows,,,application/x-www-form-urlencoded,True
-127.0.0.1,2024-07-04 13:51:38.360352,GET,200,Edge,Windows,,,text/plain,False

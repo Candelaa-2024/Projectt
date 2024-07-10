@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from validate_email import validate_email
 from .models import User
 from .decorators import before_and_after_request
+from todo.models import DailyLogin
 
 # Create your views here.
 @before_and_after_request
@@ -22,6 +23,8 @@ def loginview(request):
 
         if user is not None:
             login(request, user)
+            last_login = DailyLogin(user=request.user)
+            last_login.save()
             return redirect("todo:index")
         else:
             # Return an 'invalid login' error message.
