@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'todo',
     'user_auth',
+    'metadata_api',
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
